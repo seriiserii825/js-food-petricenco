@@ -38,7 +38,7 @@ export default function timer() {
 	setTime(deadline);
 
 	function setZero(num) {
-		if (num > 0 && num < 10) {
+		if (num >= 0 && num < 10) {
 			return `0${num}` + '';
 		} else {
 			return num + '';
