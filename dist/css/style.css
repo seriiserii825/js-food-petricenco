@@ -515,3 +515,20 @@ a {
     display: block;
     width: 280px;
     margin: 0 auto; }
+
+@keyframes fade {
+  0% {
+    opacity: .1; }
+  100% {
+    opacity: 1; } }
+
+.tabcontent.hide {
+  display: none; }
+
+.tabcontent.show {
+  display: block; }
+
+.tabcontent.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
