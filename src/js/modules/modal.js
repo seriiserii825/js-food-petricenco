@@ -1,22 +1,33 @@
 export default function modal() {
-	const modal = document.querySelector('[data-modal]');
-	const modalClose = document.querySelector('[data-modal-close]');
-	const modalOpen = document.querySelectorAll('[data-modal-open]');
+    const modalClose = document.querySelector('[data-modal-close]');
+    const modalOpen = document.querySelectorAll('[data-modal-open]');
+    const modal = document.querySelector('.modal');
 
-	function closeModal() {
-		modal.classList.remove('show', 'fade');
-		modal.classList.add('hide');
-	}
+    function closeModal() {
+        modal.classList.remove('show', 'fade');
+        modal.classList.add('hide');
+    }
 
-	function showModal() {
-		modal.classList.remove('hide');
-		modal.classList.add('show', 'fade');
-	}
+    const modalTimerId = setTimeout(showModal, 2000);
 
-	modalClose.addEventListener('click', closeModal);
+    function showModal() {
+        modal.classList.remove('hide');
+        modal.classList.add('show', 'fade');
+        clearTimeout(modalTimerId);
+    }
 
-	modalOpen.forEach(item => {
-		item.addEventListener('click', showModal);
-	});
+    function showModalOnScroll() {
+        if (window.pageYOffset + document.documentElement.clientHeight === document.documentElement.scrollHeight) {
+            showModal();
+            window.removeEventListener('scroll', showModalOnScroll);
+        }
+    }
 
+    modalClose.addEventListener('click', closeModal);
+
+    modalOpen.forEach(item => {
+        item.addEventListener('click', showModal);
+    });
+
+    window.addEventListener('scroll', showModalOnScroll);
 }
