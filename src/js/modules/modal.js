@@ -30,6 +30,4 @@ export default function modal() {
     });
 
     window.addEventListener('scroll', showModalOnScroll);
-
-    const num = new Number();
 }
