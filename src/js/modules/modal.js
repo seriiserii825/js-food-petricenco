@@ -8,12 +8,12 @@ export default function modal() {
         modal.classList.add('hide');
     }
 
-    const modalTimerId = setTimeout(showModal, 2000);
+    // const modalTimerId = setTimeout(showModal, 2000);
 
     function showModal() {
         modal.classList.remove('hide');
         modal.classList.add('show', 'fade');
-        clearTimeout(modalTimerId);
+        // clearTimeout(modalTimerId);
     }
 
     function showModalOnScroll() {
@@ -29,5 +29,5 @@ export default function modal() {
         item.addEventListener('click', showModal);
     });
 
-    window.addEventListener('scroll', showModalOnScroll);
+    // window.addEventListener('scroll', showModalOnScroll);
 }
