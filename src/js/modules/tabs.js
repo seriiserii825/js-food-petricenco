@@ -12,7 +12,7 @@ export default class Tabs {
         this.showTabs();
         this.tabsHeader.addEventListener('click', (e) => {
             const target = e.target;
-            if(target && target.classList.contains(this.tabsHeaderItemsClass + '')){
+            if (target && target.classList.contains(this.tabsHeaderItemsClass + '')) {
                 this.hideTabs();
                 this.tabsHeaderItems.forEach((item, i) => {
                     if (item === target) {
@@ -38,4 +38,5 @@ export default class Tabs {
         this.tabsContentItems[i].classList.add('show', 'fade');
         this.tabsHeaderItems[i].classList.add('tabheader__item_active');
     }
+
 }

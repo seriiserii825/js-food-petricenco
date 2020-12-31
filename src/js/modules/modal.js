@@ -22,12 +22,10 @@ export default function modal() {
             window.removeEventListener('scroll', showModalOnScroll);
         }
     }
-
     modalClose.addEventListener('click', closeModal);
 
     modalOpen.forEach(item => {
         item.addEventListener('click', showModal);
     });
-
     // window.addEventListener('scroll', showModalOnScroll);
 }
